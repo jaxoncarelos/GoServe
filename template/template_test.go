@@ -1,16 +1,10 @@
 package template
 
 import (
-	"fmt"
 	"strings"
 	"testing"
 )
 
-func showHiddenCharacters(input string) {
-	for _, char := range input {
-		fmt.Printf("%q: %v\n", char, char)
-	}
-}
 
 func TestReadTemplate(t *testing.T) {
   idealResponse := "<div>Hi from index</div>\n"
