@@ -1,7 +1,6 @@
 package template
 
 import (
-	"strings"
 	"testing"
 )
 
@@ -12,8 +11,8 @@ func TestReadTemplate(t *testing.T) {
   if err != nil {
     t.Fatal("Error: ", err)
   }
-  stringResponse := strings.TrimRight(string(response), "\x00")
-  if stringResponse != idealResponse {
+  if string(response) != idealResponse {
     t.Fatalf("Expected:\n \"%s\", got:\n \"%s\"", idealResponse, response)
   }
 }
+

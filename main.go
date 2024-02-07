@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/jaxoncarelos/GoWebServer/template"
+	"jaxoncarelos/GoWebServer/template"
 	"log"
 	"net/http"
 	"strings"
@@ -18,7 +18,9 @@ func (h *homeHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
   if path == ".html" {
     path = "index.html"
   }
+
   w.Header().Set("Content-Type", "text/html")
+
   contents, err := template.ReadTemplate("./templates/" + path)
   if err != nil {
     log.Printf("Error : %s\n", err)
